@@ -12,7 +12,6 @@ class TripleTree{
   float depth;
   float ySpeed = 10;
   float xSpeed = 10;
-  color[] colors;
   
   
   TripleTree(float layer){
@@ -24,10 +23,6 @@ class TripleTree{
     } else {
        lowerBound = height * (layer - 1)/(maxDepth);
        upperBound = height * (layer)/(maxDepth);
-    }
-    colors = new color[3];
-    for (int i = 0; i < colors.length; i++) {
-      colors[i] = color(random(255), random(255), random(255));
     }
    
     pos = new PVector(random(width), random(lowerBound, upperBound));
@@ -55,11 +50,11 @@ class TripleTree{
       noFill();
       strokeWeight(1);
       stroke(57, 224, 52, 70);
-    //  stroke(colors[0], 70);
+
       bezier(pos.x, pos.y, left.pos.x, left.pos.y, right.pos.x, right.pos.y, mid.pos.x, mid.pos.y);
-     // stroke(colors[1], 70);
+     
       bezier(pos.x, pos.y, mid.pos.x, mid.pos.y, left.pos.x, left.pos.y, right.pos.x, right.pos.y);
-    //  stroke(colors[2], 70);
+    
       bezier(pos.x, pos.y, mid.pos.x, mid.pos.y, right.pos.x, right.pos.y, left.pos.x, left.pos.y);
       
       
