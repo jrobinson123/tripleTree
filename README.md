@@ -4,7 +4,7 @@
 
 A fun variation on a classic binary tree data structure. In my version, each tree has three children instead of two. I then use a novel technique to visualize these 'TripleTrees'.
 
-The core of my program is a TripleTree class. There is only one TripleTree object in the main frame of the program, which has a remarkably simple control loop that simply applies the show and update method of the object. 
+The core of my program is a TripleTree class. There is only one TripleTree object in the main loop of the program, which simply applies the show and update method of the object. 
 
 ```processing
 TripleTree tt;
@@ -64,5 +64,30 @@ void show(){
     } 
   }
 ```
+
+In order to update each frame, the basis vector is added to the position vector. When the position goes out of range on the x or y-axis, the derivative in that direction is inverted. 
+
+```processing
+ void update(){
+    pos.add(basis);
+    if (pos.x > width) {
+      basis.x = -xSpeed;
+    } else if (pos.x < 0) {
+      basis.x = xSpeed;
+    }
+    if (pos.y > height) {
+      basis.y = -xSpeed;
+    } else if (pos.y < 0) {
+      basis.y = xSpeed;
+    }
+    if (left != null) {
+      left.update();
+      right.update();
+      mid.update();
+    } 
+  }
+}
+
+
 
 
