@@ -37,6 +37,11 @@ class TripleTree{
 ```
 left, right, and mid are recursively created TripleTree objects, this recursive pattern is what makes this data structure a tree. maxDepth acts a stop-gap for the recursion, while layer tracks the current layer of recursion a certain object is in. pos is the coordinates of a specific TripleTree, while basis is the derivative for the position.
 
+
+
+In order to display each TripleTree a point is drawn at it's position. More importantly, three bezier curves are drawn. The TripleTree's own position is always first the anchor point while different permutations of the left, right, and mid TripleTrees are the control points and second anchor point. Finally, recursive calls are made to left, right, and mid to make sure they also call the show method. 
+
+
 ```processing
 void show(){
     if (left != null) {
