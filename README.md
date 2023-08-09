@@ -35,6 +35,6 @@ class TripleTree{
   float ySpeed = 10;
   float xSpeed = 10;
 ```
-left, right, and mid are recursively created TripleTree objects, this recursive pattern is what makes this data structure a tree. maxDepth acts a stop-gap for the recursion, while layer tracks the current layer of recursion a certain object is in. 
+left, right, and mid are recursively created TripleTree objects, this recursive pattern is what makes this data structure a tree. maxDepth acts a stop-gap for the recursion, while layer tracks the current layer of recursion a certain object is in. pos is the coordinates of a specific TripleTree, while basis is the derivative for the position.
 
 
