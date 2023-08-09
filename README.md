@@ -39,8 +39,7 @@ left, right, and mid are recursively created TripleTree objects, this recursive 
 
 
 
-In order to display each TripleTree a point is drawn at it's position. More importantly, three bezier curves are drawn. The TripleTree's own position is always first the anchor point while different permutations of the left, right, and mid TripleTrees are the control points and second anchor point. Finally, recursive calls are made to left, right, and mid to make sure they also call the show method. 
-
+In order to display each TripleTree a point is drawn at it's position. More importantly, three bezier curves are drawn. The TripleTree's own position is always the first anchor point while different permutations of the left, right, and mid TripleTrees are the control points and second anchor point. Finally, recursive calls are made to left, right, and mid to make sure they also call the show method. 
 
 ```processing
 void show(){
